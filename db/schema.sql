@@ -1,14 +1,15 @@
-DROP DATABASE IF EXISTS burgers_db;
+DROP DATABASE IF EXISTS chips_db;
 
--- Create the database burgers_db and specified it for use.
-CREATE DATABASE burgers_db;
+-- Create the database chips_db and specified it for use.
+CREATE DATABASE chips_db;
 
-USE burgers_db;
+USE chips_db;
 
 -- Create the table burgers.
-CREATE TABLE burgers (
+CREATE TABLE chips (
   id int NOT NULL AUTO_INCREMENT,
-  burger varchar(255) NOT NULL,
-  devoured BOOLEAN DEFAULT false,
+  chip varchar(255) NOT NULL,
+  sku int NOT NULL,
+  removed BOOLEAN DEFAULT false,
   PRIMARY KEY (id)
 );
