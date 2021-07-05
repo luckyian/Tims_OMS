@@ -1,7 +1,7 @@
 {
-  "name": "eat_burgers",
+  "name": "tims_oms",
   "version": "1.0.0",
-  "description": "A burger app",
+  "description": "Order Management System",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luckyian/Eat_Burgers.git"
+    "url": "git+https://github.com/luckyian/Tims_OMS.git"
   },
   "author": "Ian Wren",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luckyian/Eat_Burgers/issues"
+    "url": "https://github.com/luckyian/Tims_OMS/issues"
   },
-  "homepage": "https://github.com/luckyian/Eat_Burgers#readme",
+  "homepage": "https://github.com/luckyian/Tims_OMS#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
