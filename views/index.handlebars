@@ -1,6 +1,6 @@
 <div class="container">
   <!-- Content here -->
-  <h1 id="pageTitle">Eat a Burger</h1>
+  <h1 id="pageTitle">Chip Master List</h1>
   <div class="row align-items-center">
 
 
@@ -8,13 +8,13 @@
 
       <div class="card" id="burgerList">
         <div class="card-body">
-          <h2 class="card-title">Burgers to be eaten</h2>
+          <h2 class="card-title">Chip Master List</h2>
 
           <ul>
-            {{#each burgers}}
-            {{#unless devoured}}
+            {{#each chips}}
+            {{#unless removed}}
 
-            <li id="allBurgerList">{{id}} - {{burger}}</li>
+            <li id="allChipList">{{id}} - {{chip}}</li>
             {{/unless}}
 
             {{/each}}
@@ -24,51 +24,36 @@
     </div>
     <div class="col">
 
-      <div class="card" id="burgerDashboard">
+      <div class="card" id="chipDashboard">
         <div class="card-body">
-          <h2 class="card-title">Add a burger</h2>
+          <h2 class="card-title">Add a chip</h2>
 
 
 
-          <form id="createburger" class="form-control">
-            <textarea type="text" name="burger" id="burgerName"></textarea>
-            <button type="submit" class="btn btn-success">Add burger!</button>
+          <form id="createchip" class="form-control">
+            <textarea type="text" name="chip" id="chipName"></textarea>
+            <textarea type="text" name="sku" id="skuName"></textarea>
+            <button type="submit" class="btn btn-success">Add Chip!</button>
           </form>
           
-          <h2 class="card-subtitle">Eat a burger</h2>
+          <h2 class="card-subtitle">Remove a chip</h2>
           <br>
-          <form id="updateburger" class="button-size">
-            <select name="id" id="devouredBurger">
-              {{#each burgers}}
-              {{#unless devoured}}
-              <option value={{this.id}}>{{this.burger}}</option>
+          <form id="updatechip" class="button-size">
+            <select name="id" id="removedChip">
+              {{#each chips}}
+              {{#unless removed}}
+              <option value={{this.id}}>{{this.chip}}</option>
               {{/unless}}
               {{/each}}
             </select>
-            <button type="submit" class="btn btn-danger" id="devoured">Devour a burger!</button>
+            <button type="submit" class="btn btn-danger" id="removed">Remove a chip</button>
           </form>
 
         </div>
       </div>
     </div>
 
-    <div class="col">
-      <div class="card" id="eatenBurgers">
-        <div class="card-body">
-          <h2 class="card-title">Burgers that have been eaten!</h2>
-
-          <ul>
-            {{#each burgers}}
-            {{#if devoured}}
-
-            <li id="allBurgerList"> {{id}} - {{burger}} </li>
-            {{/if}}
-            {{/each}}
-          </ul>
-
-        </div>
-      </div>
-    </div>
+    
 
 
 
