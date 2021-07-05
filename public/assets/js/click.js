@@ -1,38 +1,39 @@
 $(function() {
-    $("#devoured").on("click", function(event) {
-      var id = $(this).siblings("#devouredBurger").val();
+    $("#removed").on("click", function(event) {
+      var id = $(this).siblings("#removedChip").val();
     
       
   
-      var newDevoueredState = {
-        devoured: 1
+      var newRemovedState = {
+        removed: 1
       };
-      console.log("Update Burger", id)
+      console.log("Update Chip", id)
       // Send the PUT request.
-      $.ajax("/api/burgers/" + id, {
+      $.ajax("/api/chips/" + id, {
         type: "PUT",
-        data: newDevoueredState
+        data: newRemovedState
       }).then(
         function() {
-          console.log("Ate burger");
+          console.log("Removed a Chip");
           // Reload the page to get the updated list
           location.reload();
         }
       );
     });
   
-    $("#createburger").on("submit", function(event) {
+    $("#createchip").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
-      console.log("Created Burger")
-      var newBurger = {
-        burger: $("#burgerName").val().trim(),
+      console.log("Created Chip")
+      var newChip = {
+        chip: $("#chipName").val().trim(),
+        sku: $("#skuName").val().trim(),
       };
   
       // Send the POST request.
-      $.ajax("/api/burgers", {
+      $.ajax("/api/chips", {
         type: "POST",
-        data: newBurger
+        data: newChip
       }).then(
         function() {
           console.log("created new burger");
