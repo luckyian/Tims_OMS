@@ -16,7 +16,7 @@ router.get("/", function (req, res) {
 router.post("/api/chips", function (req, res) {
    console.log("Made a chip!", req.body)
     chip.create([
-        "chip", "sku", "removed"
+        "chipname", "sku", "removed"
     ], [
         req.body.chip, 0
     ], function (result) {

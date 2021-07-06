@@ -14,7 +14,7 @@
             {{#each chips}}
             {{#unless removed}}
 
-            <li id="allChipList">{{id}} - {{chip}}</li>
+            <li id="allChipList">{{id}} - {{chipname}}</li>
             {{/unless}}
 
             {{/each}}
@@ -31,7 +31,7 @@
 
 
           <form id="createchip" class="form-control">
-            <textarea type="text" name="chip" id="chipName"></textarea>
+            <textarea type="text" name="chipname" id="chipName"></textarea>
             <textarea type="text" name="sku" id="skuName"></textarea>
             <button type="submit" class="btn btn-success">Add Chip!</button>
           </form>
@@ -42,7 +42,7 @@
             <select name="id" id="removedChip">
               {{#each chips}}
               {{#unless removed}}
-              <option value={{this.id}}>{{this.chip}}</option>
+              <option value={{this.id}}>{{this.chipname}}</option>
               {{/unless}}
               {{/each}}
             </select>

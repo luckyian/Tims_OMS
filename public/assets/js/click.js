@@ -26,8 +26,8 @@ $(function() {
       event.preventDefault();
       console.log("Created Chip")
       var newChip = {
-        chip: $("#chipName").val().trim(),
-        sku: $("#skuName").val().trim(),
+        chipname: $("#chipName").val().trim(),
+        sku: $("#skuName"),
       };
   
       // Send the POST request.
@@ -36,7 +36,7 @@ $(function() {
         data: newChip
       }).then(
         function() {
-          console.log("created new burger");
+          console.log("created new chip");
           // Reload the page to get the updated list
           location.reload();
         }

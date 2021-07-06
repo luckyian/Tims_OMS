@@ -8,7 +8,7 @@ USE chips_db;
 -- Create the table burgers.
 CREATE TABLE chips (
   id int NOT NULL AUTO_INCREMENT,
-  chip varchar(255) NOT NULL,
+  chipname varchar(255) NOT NULL,
   sku int NOT NULL,
   removed BOOLEAN DEFAULT false,
   PRIMARY KEY (id)

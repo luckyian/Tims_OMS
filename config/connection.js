@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
         port: "3306",
         user: "root",
         password: "187onacop",
-        database: "burgers_db",
+        database: "chips_db",
     })
 };
 
