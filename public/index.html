@@ -7,42 +7,42 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <title>Fitness Tracker</title>
+  <title>Order Management</title>
 </head>
 
 <body>
   <nav>
-    <a href="/">Fitness Tracker</a>
+    <a href="/">Order Management</a>
     <a href="/stats">Dashboard</a>
   </nav>
-  <div class="wrapper workout">
+  <div class="wrapper order">
     <header>
-      <h1>Fitness Tracker</h1>
+      <h1>Order Management</h1>
     </header>
-    <div class="ui container workout">
+    <div class="ui container order">
       <div class="ui raised card m-auto">
-        <div class="prev-workout">
-          <h3>Last Workout</h3>
+        <div class="prev-order">
+          <h3>Last order</h3>
           <div>
-            <div class="workout-stats"></div>
+            <div class="order-stats"></div>
             <div class="buttons">
-              <a id="continue-btn" href="/exercise?" class="huge ui blue button">Continue Workout</a>
-              <a href="/exercise" class="huge positive ui button">New Workout</a>
+              <a id="continue-btn" href="/order?" class="huge ui blue button">Continue order</a>
+              <a href="/order" class="huge positive ui button">New order</a>
             </div>
           </div>
         </div>
-        <div class="new-workout">
-          <h3>Create Your First Workout</h3>
+        <div class="new-order">
+          <h3>Create Your First Order</h3>
         </div>
       </div>
     </div>
   </div>
   </div>
   <div id="toast">
-    Workout Added Successfully!
+    Order Added Successfully!
   </div>
   <script src="/api.js"></script>
-  <script src="/workout.js"></script>
+  <script src="/order2.js"></script>
   <script src="/index.js"></script>
 </body>
 

@@ -110,9 +110,9 @@ input {
   width: 500px;
 }
 
-form .workout-type,
-form .cardio-form div,
-form .resistance-form div {
+form .order-type,
+form .order-form div,
+form .pickList-form div {
   display: flex;
   margin-top: 30px;
 }
@@ -187,9 +187,9 @@ button {
   transition: all 1.2s;
 }
 
-.workout-type,
-form .cardio-form div,
-form .resistance-form div {
+.order-type,
+form .order-form div,
+form .pickList-form div {
   display: flex;
   margin-top: 30px;
 }
@@ -248,9 +248,9 @@ button {
   color: hsl(94, 90%, 16%);
   transition: all 0.5s;
 }
-.workout-type,
-form .cardio-form div,
-form .resistance-form div {
+.order-type,
+form .order-form div,
+form .pickList-form div {
   display: flex;
   margin-top: 30px;
 }
@@ -362,25 +362,25 @@ form > button {
   color: hsl(94, 90%, 16%);
 }
 
-.prev-workout h3 {
+.prev-order h3 {
   font-size: 2rem;
   width: 100%;
 }
 
-.prev-workout p {
+.prev-order p {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-/* .workout .card {
+/* .order .card {
   width: 350px;
 } */
 
-.prev-workout button {
+.prev-order button {
   margin: 10px;
 }
 
-.new-workout {
+.new-order {
   display: none;
 }
 
@@ -388,15 +388,15 @@ form > button {
   margin-top: 20px;
 }
 
-.workout .ui.card {
+.order .ui.card {
   padding-top: 25px;
 }
 
-.prev-workout {
+.prev-order {
   text-align: center;
 }
 
-.prev-workout .buttons {
+.prev-order .buttons {
   display: flex;
   height: 75px;
   margin-top: 30px;
@@ -423,9 +423,9 @@ form > button {
   border-top-right-radius: 0;
 }
 
-.workout-type,
-.cardio-form,
-.resistance-form {
+.order-type,
+.order-form,
+.pickList-form {
   padding: 10px;
 }
 
