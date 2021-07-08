@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <title>Fitness Tracker</title>
+  <title>Tim's Order System</title>
 </head>
 
 <body>
@@ -19,42 +19,47 @@
     <header>
       <h1>Fitness Tracker</h1>
     </header>
-    <div class="ui container exercise">
+    <div class="ui container newOrder">
       <div class="ui raised card m-auto">
-        <h2>Add Your Exercise</h2>
+        <h2>Add Your newOrder</h2>
         <form action="POST">
-          <div class="workout-type">
-            <label for="type">Exercise Type:</label>
+          <div class="order-type">
+            <label for="type">Order Type:</label>
             <select name="type" id="type">
-              <option disabled selected>Select Exercise Type</option>
-              <option value="resistance">Resistance</option>
-              <option value="cardio">Cardio</option>
+              <option disabled selected>Select Order Type</option>
+              <!-- pick-list = resistance -->
+              <!-- order = cardio -->
+              <option value="pick-list">pick-list</option>
+              <option value="order">order</option>
             </select>
           </div>
-          <div class="cardio-form d-none">
-            <div class="cardio-name">
-              <label for="cardio-name">Name:</label>
-              <input type="text" name="cardio-name" id="cardio-name" placeholder="Running" />
+          <div class="order-form d-none">
+            <div class="order-name">
+              <label for="order-name">Name:</label>
+              <input type="text" name="order-name" id="order-name" placeholder="Running" />
             </div>
+            <!-- distance = order history -->
             <div class="distance">
               <label for="distance">Distance (miles):</label>
               <input type="number" name="distance" id="distance" placeholder="5" />
             </div>
+            <!-- store = duration -->
             <div class="duration">
               <label for="duration">Duration (minutes):</label>
               <input type="number" name="duration" id="duration" placeholder="10" />
             </div>
           </div>
-          <div class="resistance-form d-none">
-            <div class="exercise">
-              <label for="name">Exercise Name:</label>
+          <div class="pick-list-form d-none">
+            <div class="newOrder">
+              <label for="name">newOrder Name:</label>
               <input type="text" name="name" id="name" placeholder="Bench Press" />
             </div>
+            <!-- by-date = weight -->
             <div class="weight">
               <label for="weight">Weight (lbs):</label>
               <input type="number" name="weight" id="weight" placeholder="200" />
             </div>
-            <div class="sets">
+            <!-- <div class="sets">
               <label for="sets">Sets:</label>
               <input type="number" name="sets" id="sets" placeholder="4" />
             </div>
@@ -62,17 +67,17 @@
               <label for="reps">Reps:</label>
               <input type="number" name="reps" id="reps" placeholder="10" />
             </div>
-            <div class="resistance-duration">
-              <label for="resistance-duration">Duration (minutes):</label>
-              <input type="number" name="resistance-duration" id="resistance-duration" placeholder="10" />
-            </div>
+            <div class="pick-list-duration">
+              <label for="pick-list-duration">Duration (minutes):</label>
+              <input type="number" name="pick-list-duration" id="pick-list-duration" placeholder="10" />
+            </div> -->
           </div>
           <div class="buttons">
             <button disabled class="huge ui blue button complete">
               Complete
             </button>
             <button disabled class="huge ui positive button add-another">
-              Add Exercise
+              Add newOrder
             </button>
           </div>
         </form>
@@ -80,10 +85,10 @@
     </div>
   </div>
   <div id="toast">
-    Workout Added Successfully!
+    order Added Successfully!
   </div>
   <script src="/api.js"></script>
-  <script src="/exercise.js"></script>
+  <script src="/order.js"></script>
 </body>
 
 </html>
