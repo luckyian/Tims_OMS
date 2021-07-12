@@ -6,7 +6,7 @@ const mongojs = require("mongojs");
 // Saves an order to the database's collection
 // ===========================================
 router.post("/api/orders", (req, res) => {
-    db.order.create({})
+    db.Order.create({})
         .then((dborder) => {
             res.json(dborder);
         })
@@ -19,7 +19,7 @@ router.post("/api/orders", (req, res) => {
 // ====================================================
 router.get("/api/orders", (req, res) => {
    
-    db.order.aggregate
+    db.Order.aggregate
     ([
         {
             $addFields: {
@@ -54,7 +54,7 @@ router.get("/api/orders/:id", (req, res) => {
 router.put("/api/orders/:id", (req, res) => {
     const id = req.params.id
     console.log(id, " ", req.body)
-    db.order.findByIdAndUpdate
+    db.Order.findByIdAndUpdate
         (id,
             { $push: { exercises: req.body } }, (err, found) => {
                 if (err) {
@@ -70,7 +70,7 @@ router.put("/api/orders/:id", (req, res) => {
 // DELETE: /delete/:id
 // ==================================================================
 router.delete("/api/orders/:id", (req, res) => {
-    db.order.remove(_id = mongojs.ObjectId(req.id), (err, found) => {
+    db.Order.remove(_id = mongojs.ObjectId(req.id), (err, found) => {
         if (err) {
             console.log(err);
         } else {
@@ -82,7 +82,7 @@ router.delete("/api/orders/:id", (req, res) => {
 // DELETE: /clearall
 // ===================================
 router.delete("/api/orders/", (req, res) => {
-    db.order.remove({}, (err, found) => {
+    db.Order.remove({}, (err, found) => {
         if (err) {
             console.log(err);
         } else {
@@ -93,7 +93,7 @@ router.delete("/api/orders/", (req, res) => {
 
 router.get("/api/orders/range", (req, res) => {
 
-    db.order.aggregate([
+    db.Order.aggregate([
         {
             $addFields: {
                 totalDuration: { $sum: "$exercises.duration" },
