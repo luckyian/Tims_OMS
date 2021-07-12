@@ -1,31 +1,36 @@
-async function initWorkout() {
-  const lastWorkout = await API.getLastWorkout();
-  console.log("Last workout:", lastWorkout);
-  if (lastWorkout) {
-    document
-      .querySelector("a[href='/exercise?']")
-      .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
+// chip = exercise
+// order = workout
+// <!-- pick-list = resistance -->
+// <!-- order = cardio -->
 
-    const workoutSummary = {
-      date: formatDate(lastWorkout.day),
-      totalDuration: lastWorkout.totalDuration,
-      numExercises: lastWorkout.exercises.length,
-      ...tallyExercises(lastWorkout.exercises)
+async function initOrder() {
+  const lastOrder = await API.getLastOrder();
+  console.log("Last Order:", lastOrder);
+  if (lastOrder) {
+    document
+      .querySelector("a[href='/chip?']")
+      .setAttribute("href", `/chip?id=${lastOrder._id}`);
+
+    const orderSummary = {
+      date: formatDate(lastOrder.day),
+      totalDuration: lastOrder.totalDuration,
+      numChips: lastOrder.chips.length,
+      ...tallyChips(lastOrder.chips)
     };
 
-    renderWorkoutSummary(workoutSummary);
+    renderOrderSummary(orderSummary);
   } else {
-    renderNoWorkoutText()
+    renderNoOrderText()
   }
 }
 
-function tallyExercises(exercises) {
-  const tallied = exercises.reduce((acc, curr) => {
-    if (curr.type === "resistance") {
+function tallyChips(chips) {
+  const tallied = chips.reduce((acc, curr) => {
+    if (curr.type === "pick-list") {
       acc.totalWeight = (acc.totalWeight || 0) + curr.weight;
       acc.totalSets = (acc.totalSets || 0) + curr.sets;
       acc.totalReps = (acc.totalReps || 0) + curr.reps;
-    } else if (curr.type === "cardio") {
+    } else if (curr.type === "order") {
       acc.totalDistance = (acc.totalDistance || 0) + curr.distance;
     }
     return acc;
@@ -44,13 +49,13 @@ function formatDate(date) {
   return new Date(date).toLocaleDateString(options);
 }
 
-function renderWorkoutSummary(summary) {
-  const container = document.querySelector(".workout-stats");
+function renderOrderSummary(summary) {
+  const container = document.querySelector(".order-stats");
 
-  const workoutKeyMap = {
+  const orderKeyMap = {
     date: "Date",
-    totalDuration: "Total Workout Duration",
-    numExercises: "Exercises Performed",
+    totalDuration: "Total Order Duration",
+    numChips: "Chips Performed",
     totalWeight: "Total Weight Lifted",
     totalSets: "Total Sets Performed",
     totalReps: "Total Reps Performed",
@@ -61,7 +66,7 @@ function renderWorkoutSummary(summary) {
     const p = document.createElement("p");
     const strong = document.createElement("strong");
 
-    strong.textContent = workoutKeyMap[key];
+    strong.textContent = orderKeyMap[key];
     const textNode = document.createTextNode(`: ${summary[key]}`);
 
     p.appendChild(strong);
@@ -71,14 +76,14 @@ function renderWorkoutSummary(summary) {
   });
 }
 
-function renderNoWorkoutText() {
-  const container = document.querySelector(".workout-stats");
+function renderNoOrderText() {
+  const container = document.querySelector(".order-stats");
   const p = document.createElement("p");
   const strong = document.createElement("strong");
-  strong.textContent = "You have not created a workout yet!"
+  strong.textContent = "You have not created a Order yet!"
 
   p.appendChild(strong);
   container.appendChild(p);
 }
 
-initWorkout();
+initOrder();
