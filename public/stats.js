@@ -138,7 +138,7 @@ function populateChart(data) {
       labels: workouts,
       datasets: [
         {
-          label: 'Exercises Performed',
+          label: 'chips Performed',
           backgroundColor: colors,
           data: durations,
         },
@@ -147,7 +147,7 @@ function populateChart(data) {
     options: {
       title: {
         display: true,
-        text: 'Exercises Performed',
+        text: 'chips Performed',
       },
     },
   });
@@ -158,7 +158,7 @@ function populateChart(data) {
       labels: workouts,
       datasets: [
         {
-          label: 'Exercises Performed',
+          label: 'chips Performed',
           backgroundColor: colors,
           data: pounds,
         },
@@ -167,7 +167,7 @@ function populateChart(data) {
     options: {
       title: {
         display: true,
-        text: 'Exercises Performed',
+        text: 'chips Performed',
       },
     },
   });
@@ -177,7 +177,7 @@ function calculateTotalWeight(data) {
   let totals = [];
 
   data.forEach((workout) => {
-    const workoutTotal = workout.exercises.reduce((total, { type, weight }) => {
+    const workoutTotal = workout.chips.reduce((total, { type, weight }) => {
       if (type === 'resistance') {
         return total + weight;
       } else {
@@ -191,18 +191,18 @@ function calculateTotalWeight(data) {
   return totals;
 }
 
-function workoutNames(data) {
-  let workouts = [];
+function orderNames(data) {
+  let orders = [];
 
-  data.forEach((workout) => {
-    workout.exercises.forEach((exercise) => {
-      workouts.push(exercise.name);
+  data.forEach((order) => {
+    order.chips.forEach((chip) => {
+      orders.push(chip.name);
     });
   });
 
   // return de-duplicated array with JavaScript `Set` object
-  return [...new Set(workouts)];
+  return [...new Set(orders)];
 }
 
-// get all workout data from back-end
-API.getWorkoutsInRange().then(populateChart);
+// get all order data from back-end
+API.getordersInRange().then(populateChart);

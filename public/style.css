@@ -137,17 +137,17 @@ form::after {
   display: none !important;
 }
 
-.exercise .ui.card {
+.chip .ui.card {
   width: 400px;
   max-width: 600px;
 }
 
-.exercise .buttons {
+.chip .buttons {
   margin-top: 20px;
   display: flex;
 }
 
-.exercise .buttons button {
+.chip .buttons button {
   width: 100%;
 }
 
