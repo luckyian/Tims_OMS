@@ -3,23 +3,23 @@ const router = require("express").Router();
 const mongojs = require("mongojs");
 
 
-// Saves an workout to the database's collection
+// Saves an order to the database's collection
 // ===========================================
-router.post("/api/workouts", (req, res) => {
-    db.Workout.create({})
-        .then((dbworkout) => {
-            res.json(dbworkout);
+router.post("/api/orders", (req, res) => {
+    db.order.create({})
+        .then((dborder) => {
+            res.json(dborder);
         })
         .catch((err) => {
             res.json(err);
         });
 });
-// Retrieves all workouts from the database's collection
+// Retrieves all orders from the database's collection
 // GET: /all
 // ====================================================
-router.get("/api/workouts", (req, res) => {
+router.get("/api/orders", (req, res) => {
    
-    db.Workout.aggregate
+    db.order.aggregate
     ([
         {
             $addFields: {
@@ -27,16 +27,16 @@ router.get("/api/workouts", (req, res) => {
             }
         }
 
-    ]).then((dbWorkouts) => { res.json(dbWorkouts); })
+    ]).then((dborders) => { res.json(dborders); })
         .catch((err) => { res.json(err); });
 });
-// 3. Retrieves one workout in the database's collection by it's ObjectId
+// 3. Retrieves one order in the database's collection by it's ObjectId
 // GET: /find/:id
 // ==================================================================
-router.get("/api/workouts/:id", (req, res) => {
+router.get("/api/orders/:id", (req, res) => {
     const id = req.params.id
 
-    db.Workout.find(
+    db.order.find(
         _id = mongojs.ObjectId(id), (err, found) => {
             if (err) {
                 console.log(err);
@@ -48,13 +48,13 @@ router.get("/api/workouts/:id", (req, res) => {
     );
 
 });
-// 4. Updates one workout in the database's collection by it's ObjectId
+// 4. Updates one order in the database's collection by it's ObjectId
 // POST: /update/:id
 // ================================================================
-router.put("/api/workouts/:id", (req, res) => {
+router.put("/api/orders/:id", (req, res) => {
     const id = req.params.id
     console.log(id, " ", req.body)
-    db.Workout.findByIdAndUpdate
+    db.order.findByIdAndUpdate
         (id,
             { $push: { exercises: req.body } }, (err, found) => {
                 if (err) {
@@ -66,11 +66,11 @@ router.put("/api/workouts/:id", (req, res) => {
             });
 
 });
-// 5. Deletes one workout from the database's collection by it's ObjectId
+// 5. Deletes one order from the database's collection by it's ObjectId
 // DELETE: /delete/:id
 // ==================================================================
-router.delete("/api/workouts/:id", (req, res) => {
-    db.Workout.remove(_id = mongojs.ObjectId(req.id), (err, found) => {
+router.delete("/api/orders/:id", (req, res) => {
+    db.order.remove(_id = mongojs.ObjectId(req.id), (err, found) => {
         if (err) {
             console.log(err);
         } else {
@@ -78,11 +78,11 @@ router.delete("/api/workouts/:id", (req, res) => {
         }
     });
 });
-// 6. Clear the entire workout collection
+// 6. Clear the entire order collection
 // DELETE: /clearall
 // ===================================
-router.delete("/api/workouts/", (req, res) => {
-    db.Workout.remove({}, (err, found) => {
+router.delete("/api/orders/", (req, res) => {
+    db.order.remove({}, (err, found) => {
         if (err) {
             console.log(err);
         } else {
@@ -91,9 +91,9 @@ router.delete("/api/workouts/", (req, res) => {
     });
 });
 
-router.get("/api/workouts/range", (req, res) => {
+router.get("/api/orders/range", (req, res) => {
 
-    db.Workout.aggregate([
+    db.order.aggregate([
         {
             $addFields: {
                 totalDuration: { $sum: "$exercises.duration" },
@@ -103,7 +103,7 @@ router.get("/api/workouts/range", (req, res) => {
     ])
         .limit(7)
         .sort({ _id: -1 })
-        .then((dbWorkouts) => { res.json(dbWorkouts); })
+        .then((dborders) => { res.json(dborders); })
         .catch((err) => { res.json(err); });
 });
 
