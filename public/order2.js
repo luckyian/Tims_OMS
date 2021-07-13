@@ -16,7 +16,7 @@ const distanceInput = document.querySelector("#distance");
 const completeButton = document.querySelector("button.complete");
 const addButton = document.querySelector("button.add-another");
 const toast = document.querySelector("#toast");
-const neworder = document.querySelector(".new-order");
+const newOrder = document.querySelector(".new-order");
 
 let storeType = null;
 let shouldNavigateAway = false;
