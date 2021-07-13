@@ -6,6 +6,9 @@ const OrderSchema = new Schema({
     type: Date,
     default: Date.now
   },
+
+  orders: [
+    {
   type:
 
   {
@@ -26,7 +29,7 @@ const OrderSchema = new Schema({
   duration: Number,
 
   distance: Number
-
+    }]
 });
 
 const Order = mongoose.model("Order", OrderSchema);
