@@ -9,26 +9,26 @@ const OrderSchema = new Schema({
 
   orders: [
     {
-  type:
+      type:
 
-  {
-    type: String,
-    trim: true,
+      {
+        type: String,
+        trim: true,
 
-  },
+      },
 
-  name: Number,
+      name: Number,
 
 
-  weight: Number,
+      weight: Number,
 
-  sets: Number,
+      sets: Number,
 
-  reps: Number,
+      reps: Number,
 
-  duration: Number,
+      duration: Number,
 
-  distance: Number
+      distance: Number
     }]
 });
 
