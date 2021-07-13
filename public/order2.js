@@ -1,9 +1,9 @@
 const storeTypeSelect = document.querySelector("#type");
-const storeForm = document.querySelector(".q811-form");
-const storeForm = document.querySelector(".f608-form");
-const storeForm = document.querySelector(".1477-form");
-const storeForm = document.querySelector(".f122-form");
-const storeForm = document.querySelector(".s1455-form");
+var storeForm = document.querySelector(".q811-form");
+var storeForm = document.querySelector(".f608-form");
+var storeForm = document.querySelector(".s1477-form");
+var storeForm = document.querySelector(".f122-form");
+var storeForm = document.querySelector(".s1455-form");
 const pickListForm = document.querySelector(".pick-list-form");
 const orderNameInput = document.querySelector("#order-name");
 const nameInput = document.querySelector("#name");
@@ -155,7 +155,7 @@ function validateInputs() {
   }
 
   if (storeTypeSelect) {
-    storeTypeSelect.addEventListener("change", handlestoreTypeChange);
+    storeTypeSelect.addEventListener("change", handleStoreTypeChange);
   }
   if (completeButton) {
     completeButton.addEventListener("click", function (event) {
