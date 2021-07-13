@@ -110,8 +110,8 @@ input {
   width: 500px;
 }
 
-form .order-type,
-form .order-form div,
+form .store-type,
+form .store-form div,
 form .pickList-form div {
   display: flex;
   margin-top: 30px;
@@ -187,8 +187,8 @@ button {
   transition: all 1.2s;
 }
 
-.order-type,
-form .order-form div,
+.store-type,
+form .store-form div,
 form .pickList-form div {
   display: flex;
   margin-top: 30px;
@@ -248,8 +248,8 @@ button {
   color: hsl(94, 90%, 16%);
   transition: all 0.5s;
 }
-.order-type,
-form .order-form div,
+.store-type,
+form .store-form div,
 form .pickList-form div {
   display: flex;
   margin-top: 30px;
@@ -423,8 +423,8 @@ form > button {
   border-top-right-radius: 0;
 }
 
-.order-type,
-.order-form,
+.store-type,
+.store-form,
 .pickList-form {
   padding: 10px;
 }
