@@ -1,9 +1,9 @@
 const storeTypeSelect = document.querySelector("#type");
-const storeForm = document.querySelector(".811-form");
-const storeForm = document.querySelector(".608-form");
+const storeForm = document.querySelector(".q811-form");
+const storeForm = document.querySelector(".f608-form");
 const storeForm = document.querySelector(".1477-form");
-const storeForm = document.querySelector(".122-form");
-const storeForm = document.querySelector(".1455-form");
+const storeForm = document.querySelector(".f122-form");
+const storeForm = document.querySelector(".s1455-form");
 const pickListForm = document.querySelector(".pick-list-form");
 const orderNameInput = document.querySelector("#order-name");
 const nameInput = document.querySelector("#name");
@@ -39,7 +39,7 @@ initOrder();
 function handleStoreTypeChange(event) {
   storeType = event.target.value;
 
-  if (storeType === ("811", "608", "1477", "122", "1455")) {
+  if (storeType === ("q811", "f608", "s1477", "f122", "s1455")) {
     storeForm.classList.remove("d-none");
     pick - listForm.classList.add("d-none");
   } else if (storeType === "pick-list") {
@@ -76,7 +76,7 @@ function validateInputs() {
     if (pick - listDurationInput.value.trim() === "") {
       isValid = false;
     }
-  } else if (storeType === ("811", "608", "1477", "122", "1455")) {
+  } else if (storeType === ("q811", "f608", "s1477", "f122", "s1455")) {
     if (orderNameInput.value.trim() === "") {
       isValid = false;
     }
@@ -114,7 +114,7 @@ function validateInputs() {
 
     let orderData = {};
 
-    if (storeType === ("811", "608", "1477", "122", "1455")) {
+    if (storeType === ("q811", "f608", "s1477", "f122", "s1455")) {
       orderData.type = storeType;
       orderData.name = orderNameInput.value.trim();
       orderData.distance = Number(distanceInput.value.trim());
