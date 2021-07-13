@@ -142,17 +142,17 @@ form::after {
   display: none !important;
 }
 
-.chip .ui.card {
+.order .ui.card {
   width: 400px;
   max-width: 600px;
 }
 
-.chip .buttons {
+.order .buttons {
   margin-top: 20px;
   display: flex;
 }
 
-.chip .buttons button {
+.order .buttons button {
   width: 100%;
 }
 

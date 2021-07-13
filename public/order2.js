@@ -39,9 +39,9 @@ initOrder();
 function handleStoreTypeChange(event) {
   storeType = event.target.value;
 
-  if (storeType === ("q811", "f608", "s1477", "f122", "s1455")) {
+  if (storeType === "q811" || "f608" || "s1477" || "f122" ||"s1455") {
     storeForm.classList.remove("d-none");
-    pick - listForm.classList.add("d-none");
+    pickListForm.classList.add("d-none");
   } else if (storeType === "pick-list") {
     pickListForm.classList.remove("d-none");
     storeForm.classList.add("d-none");
@@ -73,10 +73,10 @@ function validateInputs() {
       isValid = false;
     }
 
-    if (pick - listDurationInput.value.trim() === "") {
+    if (pickListDurationInput.value.trim() === "") {
       isValid = false;
     }
-  } else if (storeType === ("q811", "f608", "s1477", "f122", "s1455")) {
+  } else if (storeType === "q811" || "f608" || "s1477" || "f122" ||"s1455") {
     if (orderNameInput.value.trim() === "") {
       isValid = false;
     }
@@ -114,8 +114,8 @@ function validateInputs() {
 
     let orderData = {};
 
-    if (storeType === ("q811", "f608", "s1477", "f122", "s1455")) {
-      orderData.type = storeType;
+    if (storeType === "q811" || "f608" || "s1477" || "f122" ||"s1455") {
+      orderData.type = storeType.value.trim();
       orderData.name = orderNameInput.value.trim();
       orderData.distance = Number(distanceInput.value.trim());
       orderData.duration = Number(durationInput.value.trim());
@@ -128,7 +128,7 @@ function validateInputs() {
       orderData.weight = Number(weightInput.value.trim());
       orderData.sets = Number(setsInput.value.trim());
       orderData.reps = Number(repsInput.value.trim());
-      orderData.duration = Number(pick - listDurationInput.value.trim());
+      orderData.duration = Number(pickListDurationInput.value.trim());
     }
 
     await API.addOrder(orderData);
