@@ -6,32 +6,28 @@ const OrderSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  chips: [
-    {
-      name: {
-        type: String,
-        trim: true,
-        required: "Order Name is Required"
-      },
+  type:
 
-      sku: {
-      type: Number,
-        required: true
-      },
+  {
+    type: String,
+    trim: true,
 
-      // weight: {
-      //   type: Number,
-      // },
+  },
 
-      // sets: Number,
+  name: Number,
 
-      // reps: Number,
 
-      // duration: Number,
+  weight: Number,
 
-      // distance: Number
-    }]
-    });
+  sets: Number,
+
+  reps: Number,
+
+  duration: Number,
+
+  distance: Number
+
+});
 
 const Order = mongoose.model("Order", OrderSchema);
 
