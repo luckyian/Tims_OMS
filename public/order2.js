@@ -1,5 +1,9 @@
-const orderTypeSelect = document.querySelector("#type");
-const orderForm = document.querySelector(".order-form");
+const storeTypeSelect = document.querySelector("#type");
+const storeForm = document.querySelector(".811-form");
+const storeForm = document.querySelector(".608-form");
+const storeForm = document.querySelector(".1477-form");
+const storeForm = document.querySelector(".122-form");
+const storeForm = document.querySelector(".1455-form");
 const pickListForm = document.querySelector(".pick-list-form");
 const orderNameInput = document.querySelector("#order-name");
 const nameInput = document.querySelector("#name");
@@ -14,7 +18,7 @@ const addButton = document.querySelector("button.add-another");
 const toast = document.querySelector("#toast");
 const neworder = document.querySelector(".new-order")
 
-let orderType = null;
+let storeType = null;
 let shouldNavigateAway = false;
 
 async function initExercise() {
@@ -32,17 +36,17 @@ async function initExercise() {
 
 initExercise();
 
-function handleorderTypeChange(event) {
-  orderType = event.target.value;
+function handlestoreTypeChange(event) {
+  storeType = event.target.value;
 
-  if (orderType === "order") {
-    orderForm.classList.remove("d-none");
+  if (storeType === ("811", "608", "1477", "122", "1455")) {
+    storeForm.classList.remove("d-none");
     pick-listForm.classList.add("d-none");
-  } else if (orderType === "pick-list") {
+  } else if (storeType === "pick-list") {
     pickListForm.classList.remove("d-none");
-    orderForm.classList.add("d-none");
+    storeForm.classList.add("d-none");
   } else {
-    orderForm.classList.add("d-none");
+    storeForm.classList.add("d-none");
     pickListForm.classList.add("d-none");
   }
 
@@ -52,7 +56,7 @@ function handleorderTypeChange(event) {
 function validateInputs() {
   let isValid = true;
 
-  if (orderType === "pick-list") {
+  if (storeType === "pick-list") {
     if (nameInput.value.trim() === "") {
       isValid = false;
     }
@@ -72,7 +76,7 @@ function validateInputs() {
     if (pick-listDurationInput.value.trim() === "") {
       isValid = false;
     }
-  } else if (orderType === "order") {
+  } else if (storeType === ("811", "608", "1477", "122", "1455")) {
     if (orderNameInput.value.trim() === "") {
       isValid = false;
     }
@@ -100,12 +104,12 @@ async function handleFormSubmit(event) {
 
   let orderData = {};
 
-  if (orderType === "order") {
-    orderData.type = "order";
+  if (storeType === ("811", "608","1477","122","1455")) {
+    orderData.type = storeType;
     orderData.name = orderNameInput.value.trim();
     orderData.distance = Number(distanceInput.value.trim());
     orderData.duration = Number(durationInput.value.trim());
-  } else if (orderType === "pick-list") {
+  } else if (storeType === "pick-list") {
     orderData.type = "pick-list";
     orderData.name = nameInput.value.trim();
     orderData.weight = Number(weightInput.value.trim());
@@ -114,7 +118,7 @@ async function handleFormSubmit(event) {
     orderData.duration = Number(pick-listDurationInput.value.trim());
   }
 
-  await API.addExercise(orderData);
+  await API.addOrder(orderData);
   clearInputs();
   toast.classList.add("success");
 }
@@ -137,8 +141,8 @@ function clearInputs() {
   weightInput.value = "";
 }
 
-if (orderTypeSelect) {
-  orderTypeSelect.addEventListener("change", handleorderTypeChange);
+if (storeTypeSelect) {
+  storeTypeSelect.addEventListener("change", handlestoreTypeChange);
 }
 if (completeButton) {
   completeButton.addEventListener("click", function (event) {
