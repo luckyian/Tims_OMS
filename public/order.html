@@ -23,30 +23,45 @@
       <div class="ui raised card m-auto">
         <h2>Add Your Order</h2>
         <form action="POST">
-          <div class="order-type">
+          <div class="store-type">
             <label for="type">Order Type:</label>
             <select name="type" id="type">
-              <option disabled selected>Select Order Type</option>
+              <option disabled selected>Select Store</option>
               <!-- pick-list = resistance -->
               <!-- order = cardio -->
-              <option value="pick-list">pick-list</option>
-              <option value="order">order</option>
+              <option value="811">811</option>
+              <option value="608">608</option>
+              <option value="1477">1477</option>
+              <option value="122">122</option>
+              <option value="1455">1455</option>
             </select>
           </div>
-          <div class="order-form d-none">
+          <div class="store-form d-none">
             <div class="order-name">
-              <label for="order-name">Name:</label>
-              <input type="text" name="order-name" id="order-name" placeholder="Running" />
+              <label for="order-name">Juanitas 15oz</label>
+              <input type="number" name="order-name" id="order-name" placeholder="5" />
             </div>
-            <!-- distance = order history -->
+
             <div class="distance">
-              <label for="distance">Distance (miles):</label>
+              <label for="distance">Juanitas 24oz</label>
               <input type="number" name="distance" id="distance" placeholder="5" />
             </div>
-            <!-- store = duration -->
+
             <div class="duration">
-              <label for="duration">Duration (minutes):</label>
+              <label for="duration">Tims Reg 7oz</label>
               <input type="number" name="duration" id="duration" placeholder="10" />
+            </div>
+            <div class="weight">
+              <label for="weight">Tims Large 16oz</label>
+              <input type="number" name="weight" id="weight" placeholder="200" />
+            </div>
+            <div class="sets">
+              <label for="sets">Tim Jal 7oz</label>
+              <input type="number" name="sets" id="sets" placeholder="4" />
+            </div>
+            <div class="reps">
+              <label for="reps">Snyders</label>
+              <input type="number" name="reps" id="reps" placeholder="10" />
             </div>
           </div>
           <div class="pick-list-form d-none">
@@ -59,7 +74,7 @@
               <label for="weight">Weight (lbs):</label>
               <input type="number" name="weight" id="weight" placeholder="200" />
             </div>
-            <!-- <div class="sets">
+            <div class="sets">
               <label for="sets">Sets:</label>
               <input type="number" name="sets" id="sets" placeholder="4" />
             </div>
@@ -70,7 +85,7 @@
             <div class="pick-list-duration">
               <label for="pick-list-duration">Duration (minutes):</label>
               <input type="number" name="pick-list-duration" id="pick-list-duration" placeholder="10" />
-            </div> -->
+            </div>
           </div>
           <div class="buttons">
             <button disabled class="huge ui blue button complete">
