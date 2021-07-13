@@ -111,6 +111,11 @@ input {
 }
 
 form .store-type,
+form .q811-form div,
+form .f608-form div,
+form .s1477-form div,
+form .f122-form div,
+form .s1477-form div,
 form .store-form div,
 form .pickList-form div {
   display: flex;
@@ -189,6 +194,11 @@ button {
 
 .store-type,
 form .store-form div,
+form .q811-form div,
+form .f608-form div,
+form .s1477-form div,
+form .f122-form div,
+form .s1477-form div,
 form .pickList-form div {
   display: flex;
   margin-top: 30px;
@@ -250,6 +260,11 @@ button {
 }
 .store-type,
 form .store-form div,
+form .q811-form div,
+form .f608-form div,
+form .s1477-form div,
+form .f122-form div,
+form .s1477-form div,
 form .pickList-form div {
   display: flex;
   margin-top: 30px;
@@ -424,6 +439,11 @@ form > button {
 }
 
 .store-type,
+.q811-form,
+.f608-form,
+.s1477-form,
+.f122-form,
+.s1477-form,
 .store-form,
 .pickList-form {
   padding: 10px;
